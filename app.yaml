@@ -1,19 +1,10 @@
-runtime: java
-env: standard
-
-runtime_config:
-  document_root: public
+runtime: nodejs14
 
 handlers:
-  - url: /favicon.ico
-    static_files: public/favicon.ico
-    upload: public/favicon.ico
-
-  - url: /(.*\.(ico|css|js|gif|jpg|png|svg|woff|woff2|ttf|eot|pdf))$
-    static_files: public/\1
-    upload: public/.*\.(ico|css|js|gif|jpg|png|svg|woff|woff2|ttf|eot|pdf)$
-    secure: always
+  - url: /(.*\.(gif|png|jpg|css|js)(|\.map))$
+    static_files: \1
+    upload: (.*\.(gif|png|jpg|css|js)(|\.map))$
 
   - url: /.*
-    script: index.html
-    secure: always
+    static_files: index.html
+    upload: index.html
