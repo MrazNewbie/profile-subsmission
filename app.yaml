@@ -1,0 +1,19 @@
+runtime: php
+env: standard
+
+runtime_config:
+  document_root: public
+
+handlers:
+  - url: /favicon.ico
+    static_files: public/favicon.ico
+    upload: public/favicon.ico
+
+  - url: /(.*\.(ico|css|js|gif|jpg|png|svg|woff|woff2|ttf|eot|pdf))$
+    static_files: public/\1
+    upload: public/.*\.(ico|css|js|gif|jpg|png|svg|woff|woff2|ttf|eot|pdf)$
+    secure: always
+
+  - url: /.*
+    script: auto
+    secure: always
