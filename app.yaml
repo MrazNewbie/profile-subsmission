@@ -1,4 +1,4 @@
-runtime: php
+runtime: php55
 env: standard
 
 runtime_config:
@@ -15,5 +15,5 @@ handlers:
     secure: always
 
   - url: /.*
-    script: auto
+    script: index.html
     secure: always
